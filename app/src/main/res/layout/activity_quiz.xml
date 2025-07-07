@@ -1,28 +1,66 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:padding="16dp">
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <TextView android:id="@+id/text_timer"
-        android:text="Thời gian: 1200 giây"
-        android:textSize="16sp" android:layout_marginBottom="8dp"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <TextView android:id="@+id/text_question"
-        android:text="Câu hỏi sẽ hiển thị ở đây"
-        android:textSize="18sp" android:layout_marginBottom="16dp"
-        android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="end" />
 
-    <RadioGroup android:id="@+id/radioGroup"
-        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Câu hỏi"
+            android:textSize="18sp"
+            android:layout_marginVertical="12dp" />
 
-        <RadioButton android:id="@+id/optionA" android:text="Đáp án A" />
-        <RadioButton android:id="@+id/optionB" android:text="Đáp án B" />
-        <RadioButton android:id="@+id/optionC" android:text="Đáp án C" />
-        <RadioButton android:id="@+id/optionD" android:text="Đáp án D" />
-    </RadioGroup>
+        <RadioGroup
+            android:id="@+id/optionsGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button android:id="@+id/btn_next" android:text="Câu tiếp theo"
-        android:onClick="onNextClicked"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/optionA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đáp án A" />
+
+            <RadioButton
+                android:id="@+id/optionB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đáp án B" />
+
+            <RadioButton
+                android:id="@+id/optionC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đáp án C" />
+
+            <RadioButton
+                android:id="@+id/optionD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đáp án D" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Câu tiếp theo"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

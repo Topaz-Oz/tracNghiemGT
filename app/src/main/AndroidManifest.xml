@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrafficQuiz"
         tools:targetApi="31">
-        <activity android:name=".ui.WrongAnswersActivity" />
+        <activity android:name=".ui.WrongDetailActivity" />
         <activity android:name=".ui.QuizActivity" />
         <activity android:name=".ui.ResultActivity" />
         <activity

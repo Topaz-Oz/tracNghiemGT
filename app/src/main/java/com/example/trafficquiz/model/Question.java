@@ -1,28 +1,94 @@
 package com.example.trafficquiz.model;
+
 import java.io.Serializable;
 
-public class Question {
-    private int id, correctAnswer;
-    private String question, optionA, optionB, optionC, optionD;
+public class Question implements Serializable {
+    private int id;
+    private String question;
+    private String optionA;
+    private String optionB;
+    private String optionC;
+    private String optionD;
+    private int correctAnswer;
+    private String image;
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Question() {
+    }
 
-    public String getQuestion() { return question; }
-    public void setQuestion(String question) { this.question = question; }
+    public Question(int id, String question, String optionA, String optionB, String optionC, String optionD, int correctAnswer, String image) {
+        this.id = id;
+        this.question = question;
+        this.optionA = optionA;
+        this.optionB = optionB;
+        this.optionC = optionC;
+        this.optionD = optionD;
+        this.correctAnswer = correctAnswer;
+        this.image = image;
+    }
 
-    public String getOptionA() { return optionA; }
-    public void setOptionA(String optionA) { this.optionA = optionA; }
+    // Getters và setters
 
-    public String getOptionB() { return optionB; }
-    public void setOptionB(String optionB) { this.optionB = optionB; }
+    public int getId() {
+        return id;
+    }
 
-    public String getOptionC() { return optionC; }
-    public void setOptionC(String optionC) { this.optionC = optionC; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getOptionD() { return optionD; }
-    public void setOptionD(String optionD) { this.optionD = optionD; }
+    public String getQuestion() {
+        return question;
+    }
 
-    public int getCorrectAnswer() { return correctAnswer; }
-    public void setCorrectAnswer(int correctAnswer) { this.correctAnswer = correctAnswer; }
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getOptionA() {
+        return optionA;
+    }
+
+    public void setOptionA(String optionA) {
+        this.optionA = optionA;
+    }
+
+    public String getOptionB() {
+        return optionB;
+    }
+
+    public void setOptionB(String optionB) {
+        this.optionB = optionB;
+    }
+
+    public String getOptionC() {
+        return optionC;
+    }
+
+    public void setOptionC(String optionC) {
+        this.optionC = optionC;
+    }
+
+    public String getOptionD() {
+        return optionD;
+    }
+
+    public void setOptionD(String optionD) {
+        this.optionD = optionD;
+    }
+
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(int correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
