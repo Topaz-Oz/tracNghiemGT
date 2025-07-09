@@ -1,0 +1,257 @@
+[
+  {
+    "name": "Biển báo W.201a",
+    "description": "Chỗ ngoặt nguy hiểm vòng bên trái. Báo trước sắp tới chỗ ngoặt vòng bên trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/bien-bao-nguy-hiem-w.201a.jpg"
+  },
+  {
+    "name": "Biển báo W.201b",
+    "description": "Chỗ ngoặt nguy hiểm vòng bên phải. Báo trước sắp tới chỗ ngoặt vòng bên phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/bien-bao-nguy-hiem-w.201b.jpg"
+  },
+  {
+    "name": "Biển báo W.201c",
+    "description": "Chỗ ngoặt nguy hiểm có nguy cơ lật xe bên phải. Báo trước sắp tới chỗ ngoặt nguy hiểm có nguy cơ lật xe bên phải khi đường cong vòng sang trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/Cho-ngoat-nguy-hiem-lat-xe-w.201c.jpg"
+  },
+  {
+    "name": "Biển báo W.201d",
+    "description": "Chỗ ngoặt nguy hiểm có nguy cơ lật xe bên trái. Báo trước sắp tới chỗ ngoặt nguy hiểm có nguy cơ lật xe bên trái khi đường cong vòng sang phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/Cho-ngoat-nguy-hiem-lat-xe-w.201d.jpg"
+  },
+  {
+    "name": "Biển báo W.202a",
+    "description": "Hai chỗ ngoặt ngược chiều nhau liên tiếp bên trái. Báo trước có từ 2 chỗ ngoặt gần nhau, chỗ đầu tiên vòng bên trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/bien-bao-nguy-hiem-w.202a.jpg"
+  },
+  {
+    "name": "Biển báo W.202b",
+    "description": "Hai chỗ ngoặt ngược chiều nhau liên tiếp bên phải. Báo trước có từ 2 chỗ ngoặt gần nhau, chỗ đầu tiên vòng bên phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/bien-bao-nguy-hiem-w.202b.jpg"
+  },
+  {
+    "name": "Biển báo W.203a",
+    "description": "Đường bị thu hẹp cả hai bên. Báo trước đường sắp bị thu hẹp cả hai bên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/bien-bao-tam-giac-duong-bi-hep-hai-ben-w.203a.jpg"
+  },
+  {
+    "name": "Biển báo W.203b",
+    "description": "Đường bị thu hẹp bên trái. Báo trước đường bị hẹp phía bên trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/duong-thu-hep-ben-trai.jpg"
+  },
+  {
+    "name": "Biển báo W.203c",
+    "description": "Đường bị thu hẹp bên phải. Báo trước đường bị hẹp phía bên phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/duong-thu-hep-ben-phai.jpg"
+  },
+  {
+    "name": "Biển báo W.204",
+    "description": "Đường 2 chiều. Báo đoạn đường phía trước do sửa chữa hoặc có trở ngại nên phải đi vào phần đường còn lại theo cả 2 chiều.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/duong-hai-chieu.png"
+  },
+  {
+    "name": "Biển báo W.205a",
+    "description": "Đường giao nhau. Báo hiệu sắp đến ngã tư giao nhau với đường cùng cấp.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/205e.gif"
+  },
+  {
+    "name": "Biển báo W.205b",
+    "description": "Đường giao nhau. Báo hiệu đường giao nhau cùng cấp phía bên phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/205b.gif"
+  },
+  {
+    "name": "Biển báo W.205c",
+    "description": "Đường giao nhau. Báo hiệu đường giao nhau cùng cấp phía bên trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/205a.gif"
+  },
+  {
+    "name": "Biển báo W.205d",
+    "description": "Đường giao nhau. Báo hiệu đường giao nhau cùng cấp phía trước.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/205c.gif"
+  },
+  {
+    "name": "Biển báo W.205e",
+    "description": "Đường giao nhau. Báo hiệu sắp đến đoạn đường giao nhau cùng cấp.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/205d.gif"
+  },
+  {
+    "name": "Biển báo W.206",
+    "description": "Đường giao nhau chạy theo vòng xuyến. Báo hiệu nơi giao nhau có đảo an toàn ở giữa.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/206.gif"
+  },
+  {
+    "name": "Biển báo W.207a",
+    "description": "Giao nhau với đường không ưu tiên. Đặt trên đường ưu tiên, báo trước sắp đến nơi giao nhau.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207a-1.jpg"
+  },
+  {
+    "name": "Biển báo W.207b",
+    "description": "Giao nhau với đường không ưu tiên bên phải. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207b.jpg"
+  },
+  {
+    "name": "Biển báo W.207c",
+    "description": "Giao nhau với đường không ưu tiên bên trái. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207c.jpg"
+  },
+  {
+    "name": "Biển báo W.207d",
+    "description": "Giao nhau với đường không ưu tiên liên tiếp. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207d.jpg"
+  },
+  {
+    "name": "Biển báo W.207e",
+    "description": "Giao nhau với đường không ưu tiên liên tiếp. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/W.207e.jpg"
+  },
+  {
+    "name": "Biển báo W.207f",
+    "description": "Giao nhau với đường không ưu tiên bên trái. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207f.jpg"
+  },
+  {
+    "name": "Biển báo W.207g",
+    "description": "Giao nhau với đường không ưu tiên bên phải. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207g.jpg"
+  },
+  {
+    "name": "Biển báo W.207h",
+    "description": "Giao nhau với đường không ưu tiên bên phải. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207h.jpg"
+  },
+  {
+    "name": "Biển báo W.207i",
+    "description": "Giao nhau với đường không ưu tiên ở bên phải và phía trước. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207i.jpg"
+  },
+  {
+    "name": "Biển báo W.207k",
+    "description": "Giao nhau với đường không ưu tiên phía trước. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207k.jpg"
+  },
+  {
+    "name": "Biển báo W.207l",
+    "description": "Giao nhau với đường không ưu tiên bên trái và phía trước. Đặt trên đường ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.207l.jpg"
+  },
+  {
+    "name": "Biển báo W.208",
+    "description": "Giao nhau với đường ưu tiên. Đặt trên đường không ưu tiên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/208.gif"
+  },
+  {
+    "name": "Biển báo W.209",
+    "description": "Giao nhau có tín hiệu đèn. Báo trước nơi giao nhau có đèn tín hiệu điều khiển giao thông.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/209.gif"
+  },
+  {
+    "name": "Biển báo W.210",
+    "description": "Giao nhau với đường sắt có rào chắn. Báo trước sắp đến chỗ giao nhau đường bộ và đường sắt, có rào chắn ở 2 bên đường sắt và có nhân viên ngành đường sắt điều khiển.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/211.gif"
+  },
+  {
+    "name": "Biển báo W.211a",
+    "description": "Giao nhau với đường sắt không có rào chắn. Báo trước sắp đến chỗ giao nhau đường bộ và đường sắt, không có rào chắn ở 2 bên đường sắt và không có người điều khiển giao thông.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/211b-giao-nhau-voi-duong-tau-dien.jpg"
+  },
+  {
+    "name": "Biển báo W.211b",
+    "description": "Giao nhau cùng mức với đường tàu điện. Báo trước sắp đến chỗ giao nhau cùng mức với đường tàu điện.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.212.jpg"
+  },
+  {
+    "name": "Biển báo W.212",
+    "description": "Cầu hẹp. Báo cầu phía trước là loại cầu có chiều rộng phần xe chạy nhỏ hơn hoặc bằng 1 làn đường (4,5m). Các xe phải nhường nhau và chờ ở 2 đầu cầu.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.212.jpg"
+  },
+  {
+    "name": "Biển báo W.213",
+    "description": "Cầu tạm. Báo cầu phía trước là loại cầu tạm, được làm để sử dụng tạm thời cho xe qua lại.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.213.jpg"
+  },
+  {
+    "name": "Biển báo W.214",
+    "description": "Cầu xoay – cầu cất. Báo cầu phía trước là loại cầu xoay, cầu cất có thể ngắt giao thông đường bộ để tàu thuyền qua lại. Các phương tiện phải chờ đợi để đi qua.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.214.png"
+  },
+  {
+    "name": "Biển báo W.215a",
+    "description": "Kè – vực sâu phía trước. Báo phía trước có bờ kè, vực sâu hoặc bờ sông áp sát đường phía trước, cần đề phòng vượt kè, rơi xuống vực.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.215c.jpg"
+  },
+  {
+    "name": "Biển báo W.215b",
+    "description": "Kè – vực sâu phía bên phải. Báo phía trước có bờ kè, vực sâu hoặc bờ sông áp sát đường phía bên phải, cần đề phòng vượt kè, rơi xuống vực.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.215c.jpg"
+  },
+  {
+    "name": "Biển báo W.215c",
+    "description": "Kè – vực sâu phía bên trái. Báo phía trước có bờ kè, vực sâu hoặc bờ sông áp sát đường phía bên trái, cần đề phòng vượt kè, rơi xuống vực.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.215a.jpg"
+  },
+  {
+    "name": "Biển báo W.216a",
+    "description": "Đường ngầm. Báo trước những chỗ có đường ngầm (đường tràn) mà nước có thể chảy tràn qua mặt đường thường xuyên.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.216a.jpg"
+  },
+  {
+    "name": "Biển báo W.216b",
+    "description": "Đường ngầm có nguy cơ lũ quét. Báo trước những chỗ có đường ngầm (đường tràn) có nguy cơ có lũ quét.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w216b.jpg"
+  },
+  {
+    "name": "Biển báo W.217",
+    "description": "Bến phà. Báo trước sắp đến bến phà.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.217.jpg"
+  },
+  {
+    "name": "Biển báo W.218",
+    "description": "Cửa chui. Báo trước sắp đến những đường có cổng chắn ngang như cổng hầm, cổng thành, cầu vượt dạng vòm.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/218.gif"
+  },
+  {
+    "name": "Biển báo W.219",
+    "description": "Dốc xuống nguy hiểm. Báo trước sắp tới dốc xuống nguy hiểm, người điều khiển phương tiện phải chọn cách chạy phù hợp để đảm bảo an toàn.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/219.gif"
+  },
+  {
+    "name": "Biển báo W.220",
+    "description": "Dốc lên nguy hiểm. Báo trước sắp tới dốc lên nguy hiểm, người điều khiển phương tiện phải chọn cách chạy phù hợp để đảm bảo an toàn.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.220.jpg"
+  },
+  {
+    "name": "Biển báo W.221a",
+    "description": "Đường không bằng phẳng. Báo trước sắp tới đoạn đường có mặt đường không bằng phẳng, lồi lõm, sống trâu… xe chạy tốc độ cao sẽ bị nguy hiểm.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.221b.jpg"
+  },
+  {
+    "name": "Biển báo W.221b",
+    "description": "Đường không bằng phẳng (gờ giảm tốc). Báo trước đoạn đường có sóng mấp mô nhân tạo (gờ giảm tốc) để hạn chế tốc độ, bắt buộc lái xe phải chạy chậm.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.221a.jpg"
+  },
+  {
+    "name": "Biển báo W.222a",
+    "description": "Đường trơn. Báo trước sắp tới đoạn đường trơn trượt khi thời tiết xấu, cần tránh phanh gấp, tăng ga, sang số đột ngột, phải giảm tốc độ và thận trọng.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.222a.jpg"
+  },
+  {
+    "name": "Biển báo W.222b",
+    "description": "Lề nguy hiểm. Báo nơi lề đường không ổn định, khi xe đi vào dễ văng đất đá hoặc bánh xe quay tại chỗ.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.222b.jpg"
+  },
+  {
+    "name": "Biển báo W.223a",
+    "description": "Vách núi nguy hiểm. Báo trước đường đi sát vách núi bên trái.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.223a.jpg"
+  },
+  {
+    "name": "Biển báo W.223b",
+    "description": "Vách núi nguy hiểm. Báo trước đường đi sát vách núi bên phải.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.223b.jpg"
+  },
+  {
+    "name": "Biển báo W.224",
+    "description": "Đường dành cho người đi bộ cắt ngang. Báo trước sắp đến phần đường ngang dành cho người đi bộ, các xe phải nhường và chỉ được chạy khi không gây nguy hiểm.",
+    "imageUrl": "https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.224.jpg"
+  }
+]

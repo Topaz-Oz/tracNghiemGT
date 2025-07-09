@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "questionText": "Khi lái xe trên đường trơn, bạn nên làm gì?",
+    "options": ["Đi nhanh", "Phanh gấp", "Giữ đều ga, đi chậm", "Bấm còi liên tục"],
+    "correctAnswer": "C",
+    "explanation": "Phải giữ đều ga, đi chậm để tránh mất lái."
+  },
+  {
+    "id": 2,
+    "questionText": "Khi qua nơi giao nhau có tín hiệu đèn, lái xe phải?",
+    "options": ["Phóng nhanh vượt đèn đỏ", "Nhường đường cho người đi bộ", "Bấm còi liên tục", "Dừng lại ngay cả khi đèn xanh"],
+    "correctAnswer": "B",
+    "explanation": "Phải nhường đường cho người đi bộ để đảm bảo an toàn."
+  },
+  {
+    "id": 3,
+    "questionText": "Biển báo hiệu 'Cấm đi ngược chiều' có dạng gì?",
+    "options": ["Hình tròn, nền đỏ, vạch ngang trắng", "Hình vuông xanh", "Hình tam giác vàng", "Hình tròn nền xanh"],
+    "correctAnswer": "A",
+    "explanation": "Biển cấm đi ngược chiều có dạng hình tròn, nền đỏ, vạch ngang trắng."
+  },
+  {
+    "id": 4,
+    "questionText": "Khi gặp đèn vàng đang bật, người lái xe phải?",
+    "options": ["Dừng lại trước vạch dừng", "Tăng tốc vượt nhanh", "Giảm ga và đi tiếp", "Lùi lại"],
+    "correctAnswer": "A",
+    "explanation": "Đèn vàng báo hiệu phải dừng lại trước vạch dừng, trừ khi đã đi quá an toàn."
+  },
+  {
+    "id": 5,
+    "questionText": "Khi đi qua đoạn đường hẹp, xe nào phải nhường đường?",
+    "options": ["Xe đi xuống dốc", "Xe đi lên dốc", "Xe con", "Xe tải"],
+    "correctAnswer": "A",
+    "explanation": "Xe đi xuống dốc phải nhường cho xe đi lên dốc để đảm bảo an toàn."
+  },
+  {
+    "id": 6,
+    "questionText": "Người lái xe mô tô phải đội mũ bảo hiểm khi?",
+    "options": ["Đi trong thành phố", "Đi trên quốc lộ", "Đi bất kỳ đâu", "Đi trên đường nông thôn"],
+    "correctAnswer": "C",
+    "explanation": "Người đi mô tô phải đội mũ bảo hiểm khi đi trên mọi tuyến đường."
+  },
+  {
+    "id": 7,
+    "questionText": "Khi lái xe ban đêm, phải sử dụng đèn gì để tránh chói mắt xe đi ngược chiều?",
+    "options": ["Đèn pha", "Đèn sương mù", "Đèn chiếu gần", "Đèn chiếu xa"],
+    "correctAnswer": "C",
+    "explanation": "Ban đêm khi gặp xe đối diện, phải dùng đèn chiếu gần để không gây chói."
+  },
+  {
+    "id": 8,
+    "questionText": "Khi điều khiển ô tô rẽ phải, người lái phải làm gì?",
+    "options": ["Giảm tốc độ, nhường người đi bộ", "Bấm còi to", "Đi nhanh để tránh xe khác", "Không cần tín hiệu"],
+    "correctAnswer": "A",
+    "explanation": "Khi rẽ phải phải giảm tốc độ và nhường người đi bộ qua đường."
+  },
+  {
+    "id": 9,
+    "questionText": "Khi dừng xe trên dốc, người lái phải?",
+    "options": ["Kéo phanh tay", "Bỏ phanh", "Giữ chân phanh", "Đạp ga"],
+    "correctAnswer": "A",
+    "explanation": "Phải kéo phanh tay để tránh trôi xe."
+  },
+  {
+    "id": 10,
+    "questionText": "Khoảng cách an toàn với xe trước khi đi trên đường cao tốc là?",
+    "options": ["20m", "30m", "Tùy tốc độ", "10m"],
+    "correctAnswer": "C",
+    "explanation": "Khoảng cách an toàn tùy thuộc vào tốc độ ghi trên biển chỉ dẫn."
+  },
+  {
+    "id": 11,
+    "questionText": "Biển báo 'Đường dành cho người đi bộ' có màu gì?",
+    "options": ["Xanh dương", "Đỏ", "Vàng", "Trắng"],
+    "correctAnswer": "A",
+    "explanation": "Biển báo dành cho người đi bộ có nền xanh dương, biểu tượng người đi bộ."
+  },
+  {
+    "id": 12,
+    "questionText": "Người lái xe phải giảm tốc độ khi?",
+    "options": ["Đi qua khu dân cư", "Đường vắng", "Ban đêm", "Không có xe khác"],
+    "correctAnswer": "A",
+    "explanation": "Phải giảm tốc độ khi đi qua khu dân cư để đảm bảo an toàn."
+  },
+  {
+    "id": 13,
+    "questionText": "Trước khi chuyển hướng, người lái xe phải?",
+    "options": ["Bấm còi", "Quan sát và bật tín hiệu", "Đi chậm lại nhưng không báo hiệu", "Nháy đèn pha"],
+    "correctAnswer": "B",
+    "explanation": "Phải quan sát và bật tín hiệu báo rẽ trước khi chuyển hướng."
+  },
+  {
+    "id": 14,
+    "questionText": "Hành vi vượt xe trong hầm đường bộ có được phép không?",
+    "options": ["Được phép", "Tùy điều kiện", "Không được phép", "Chỉ khi có đèn xi nhan"],
+    "correctAnswer": "C",
+    "explanation": "Không được phép vượt xe trong hầm đường bộ để tránh tai nạn."
+  },
+  {
+    "id": 15,
+    "questionText": "Biển báo hình tam giác, viền đỏ, nền vàng là loại biển gì?",
+    "options": ["Biển cấm", "Biển chỉ dẫn", "Biển cảnh báo", "Biển hiệu lệnh"],
+    "correctAnswer": "C",
+    "explanation": "Biển cảnh báo thường có hình tam giác, viền đỏ, nền vàng."
+  },
+  {
+    "id": 16,
+    "questionText": "Lái xe ban đêm, khi gặp xe ngược chiều bạn nên?",
+    "options": ["Bật đèn pha", "Bật đèn chiếu gần", "Tăng tốc", "Nháy còi liên tục"],
+    "correctAnswer": "B",
+    "explanation": "Phải chuyển sang đèn chiếu gần để tránh gây chói mắt."
+  },
+  {
+    "id": 17,
+    "questionText": "Trên đường có biển 'Cấm ô tô', xe mô tô có được phép đi không?",
+    "options": ["Được phép", "Không được phép", "Chỉ xe đạp được đi", "Tùy tình huống"],
+    "correctAnswer": "A",
+    "explanation": "Biển cấm ô tô không cấm mô tô, mô tô vẫn được phép đi."
+  },
+  {
+    "id": 18,
+    "questionText": "Khi tránh xe ngược chiều trên đường hẹp, xe nào phải nhường?",
+    "options": ["Xe đi xuống dốc", "Xe đi lên dốc", "Xe con", "Xe buýt"],
+    "correctAnswer": "A",
+    "explanation": "Xe đi xuống dốc phải nhường đường cho xe đi lên dốc."
+  },
+  {
+    "id": 19,
+    "questionText": "Khi thấy xe ưu tiên phát tín hiệu, bạn phải?",
+    "options": ["Giảm tốc và tránh", "Đi bình thường", "Tăng tốc", "Đi sang làn khác ngay lập tức"],
+    "correctAnswer": "A",
+    "explanation": "Phải giảm tốc độ và tránh sang bên phải để nhường đường."
+  },
+  {
+    "id": 20,
+    "questionText": "Người lái xe không được sử dụng rượu bia khi?",
+    "options": ["Lái xe trong nội thành", "Lái xe trên cao tốc", "Lái xe bất cứ khi nào", "Khi đi đường vắng"],
+    "correctAnswer": "C",
+    "explanation": "Luật quy định cấm tuyệt đối sử dụng rượu bia khi lái xe."
+  }
+]

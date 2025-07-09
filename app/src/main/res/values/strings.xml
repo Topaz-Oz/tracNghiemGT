@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TrafficQuiz</string>
+    <string name="question_number_desc">Số câu hỏi</string>
+    <string name="mark">Đánh dấu</string>
 </resources>

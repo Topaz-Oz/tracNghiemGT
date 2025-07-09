@@ -1,66 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/questionCount"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="36dp"
+        android:text="Câu 1/25"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/timerText"
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="20:00"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="376dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="16dp"
+        android:text="Nội dung câu hỏi hiển thị ở đây."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionCount" />
+
+
+    <Button
+        android:id="@+id/markButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Đánh dấu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionText" />
+
+    <RadioGroup
+        android:id="@+id/optionsGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/markButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/optionA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="20:00"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="end" />
+            android:text="Đáp án A" />
 
-        <TextView
-            android:id="@+id/questionText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Câu hỏi"
-            android:textSize="18sp"
-            android:layout_marginVertical="12dp" />
-
-        <RadioGroup
-            android:id="@+id/optionsGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/optionA"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đáp án A" />
-
-            <RadioButton
-                android:id="@+id/optionB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đáp án B" />
-
-            <RadioButton
-                android:id="@+id/optionC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đáp án C" />
-
-            <RadioButton
-                android:id="@+id/optionD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đáp án D" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/nextButton"
+        <RadioButton
+            android:id="@+id/optionB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Câu tiếp theo"
-            android:layout_marginTop="16dp" />
-    </LinearLayout>
-</ScrollView>
+            android:text="Đáp án B" />
+
+        <RadioButton
+            android:id="@+id/optionC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đáp án C" />
+
+        <RadioButton
+            android:id="@+id/optionD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đáp án D" />
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/questionNavRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/optionsGroup" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:text="Tiếp theo"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/questionNavRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/optionsGroup"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

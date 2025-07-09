@@ -14,15 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrafficQuiz"
         tools:targetApi="31">
+
         <activity android:name=".ui.WrongDetailActivity" />
+        <activity android:name=".ui.SignsActivity" />
         <activity android:name=".ui.QuizActivity" />
         <activity android:name=".ui.ResultActivity" />
+        <activity android:name=".ui.TrialIntroActivity" />
+        <activity android:name=".ui.WrongQuestionsActivity" />
+
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
