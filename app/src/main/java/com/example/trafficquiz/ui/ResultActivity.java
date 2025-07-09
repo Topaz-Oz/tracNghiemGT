@@ -38,7 +38,7 @@ public class ResultActivity extends AppCompatActivity {
         scoreText.setText("Bạn trả lời đúng " + score + "/" + questionList.size() + " câu");
 
         TextView resultMessage = findViewById(R.id.resultMessage);
-        if (score >= 21) { // VD: >=21/25 là đậu
+        if (score >= 21) { // >=21/25: đậu
             resultMessage.setText("🎉 Chúc mừng! Bạn đã ĐẬU kỳ thi.");
             resultMessage.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
         } else {
@@ -49,13 +49,14 @@ public class ResultActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.questionNavRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
 
-        // Adapter riêng để tô màu ô câu hỏi
+        // Adapter riêng để tô màu kết quả từng câu
         ResultQuestionNavAdapter adapter = new ResultQuestionNavAdapter(questionList, selectedAnswers, this);
         recyclerView.setAdapter(adapter);
 
         Button retryButton = findViewById(R.id.retryButton);
         retryButton.setOnClickListener(v -> {
             Intent intent = new Intent(ResultActivity.this, QuizActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         });
@@ -66,6 +67,14 @@ public class ResultActivity extends AppCompatActivity {
             intent.putExtra("questionList", questionList);
             intent.putExtra("selectedAnswers", selectedAnswers);
             startActivity(intent);
+        });
+
+        Button homeButton = findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
         });
     }
 }

@@ -1,18 +1,27 @@
 package com.example.trafficquiz.ui;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trafficquiz.R;
-import com.example.trafficquiz.database.QuizDbHelper;
 import com.example.trafficquiz.model.Question;
+import com.example.trafficquiz.repository.QuestionRepository;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -20,31 +29,28 @@ import java.util.Locale;
 public class QuizActivity extends AppCompatActivity {
 
     private TextView questionText, timerText, questionCount;
-    private RadioButton optionA, optionB, optionC, optionD;
+    private ImageView questionImage;
     private RadioGroup optionsGroup;
+    private RadioButton optionA, optionB, optionC, optionD;
     private Button nextButton;
     private RecyclerView questionNavRecyclerView;
     private QuestionNavAdapter navAdapter;
     private List<Boolean> markedForReview = new ArrayList<>();
     private List<Question> questionList;
+    private List<Boolean> answeredStatus = new ArrayList<>();
+    private List<Integer> selectedAnswers = new ArrayList<>();
     private int currentIndex = 0;
     private int score = 0;
     private CountDownTimer timer;
-
-    // Trạng thái đã trả lời
-    private List<Boolean> answeredStatus = new ArrayList<>();
-    // Lưu đáp án đã chọn
-    private List<Integer> selectedAnswers = new ArrayList<>();
+    private long timeRemaining = 15 * 60 * 1000; // 15 phút
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
         questionText = findViewById(R.id.questionText);
+        questionImage = findViewById(R.id.questionImage);
         timerText = findViewById(R.id.timerText);
         questionCount = findViewById(R.id.questionCount);
         optionsGroup = findViewById(R.id.optionsGroup);
@@ -55,25 +61,22 @@ public class QuizActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButton);
         questionNavRecyclerView = findViewById(R.id.questionNavRecyclerView);
         Button markButton = findViewById(R.id.markButton);
+
         QuizDbHelper dbHelper = new QuizDbHelper(this);
         questionList = dbHelper.getRandomQuestions(25);
-        markButton.setOnClickListener(view -> {
-            boolean currentStatus = markedForReview.get(currentIndex);
-            markedForReview.set(currentIndex, !currentStatus);
-            navAdapter.notifyDataSetChanged();
-        });
+
         for (int i = 0; i < questionList.size(); i++) {
             answeredStatus.add(false);
-            selectedAnswers.add(-1); // -1: chưa chọn
+            selectedAnswers.add(-1);
             markedForReview.add(false);
         }
 
-        // 💡 Đây! Gán sự kiện cho nút
         markButton.setOnClickListener(view -> {
             boolean currentStatus = markedForReview.get(currentIndex);
             markedForReview.set(currentIndex, !currentStatus);
             navAdapter.notifyDataSetChanged();
         });
+
         List<Integer> questionNumbers = new ArrayList<>();
         for (int i = 1; i <= questionList.size(); i++) {
             questionNumbers.add(i);
@@ -84,10 +87,8 @@ public class QuizActivity extends AppCompatActivity {
             currentIndex = position;
             animateQuestionChange(this::showQuestion);
         });
-
         questionNavRecyclerView.setAdapter(navAdapter);
 
-        // Khi chọn radio button, lưu trạng thái
         optionsGroup.setOnCheckedChangeListener((group, checkedId) -> {
             int answer = -1;
             if (checkedId == optionA.getId()) answer = 1;
@@ -96,8 +97,6 @@ public class QuizActivity extends AppCompatActivity {
             else if (checkedId == optionD.getId()) answer = 4;
 
             selectedAnswers.set(currentIndex, answer);
-
-            // Nếu đã chọn, đánh dấu đã trả lời
             if (answer != -1) {
                 answeredStatus.set(currentIndex, true);
                 navAdapter.notifyDataSetChanged();
@@ -108,12 +107,6 @@ public class QuizActivity extends AppCompatActivity {
         showQuestion();
 
         nextButton.setOnClickListener(view -> {
-            if (selectedAnswers.get(currentIndex) != -1 && !answeredStatus.get(currentIndex)) {
-                score++;
-                answeredStatus.set(currentIndex, true);
-                navAdapter.notifyDataSetChanged();
-            }
-
             if (currentIndex < questionList.size() - 1) {
                 currentIndex++;
                 animateQuestionChange(this::showQuestion);
@@ -122,17 +115,13 @@ public class QuizActivity extends AppCompatActivity {
                 showResult();
             }
         });
-
     }
-    private void animateQuestionChange(Runnable onAnimationEnd) {
-        questionText.animate()
-                .alpha(0f)
-                .setDuration(200)
-                .withEndAction(() -> {
-                    onAnimationEnd.run();
-                    questionText.animate().alpha(1f).setDuration(200).start();
-                }).start();
 
+    private void animateQuestionChange(Runnable onAnimationEnd) {
+        questionText.animate().alpha(0f).setDuration(200).withEndAction(() -> {
+            onAnimationEnd.run();
+            questionText.animate().alpha(1f).setDuration(200).start();
+        }).start();
         optionA.animate().alpha(0f).setDuration(200).withEndAction(() -> optionA.animate().alpha(1f).setDuration(200).start()).start();
         optionB.animate().alpha(0f).setDuration(200).withEndAction(() -> optionB.animate().alpha(1f).setDuration(200).start()).start();
         optionC.animate().alpha(0f).setDuration(200).withEndAction(() -> optionC.animate().alpha(1f).setDuration(200).start()).start();
@@ -154,6 +143,21 @@ public class QuizActivity extends AppCompatActivity {
         }
         questionText.setText(formattedQuestion);
 
+        // Hiển thị hình ảnh nếu có
+        if (q.getImage() != null && !q.getImage().isEmpty()) {
+            try {
+                InputStream is = getAssets().open("images/" + q.getImage());
+                Bitmap bitmap = BitmapFactory.decodeStream(is);
+                questionImage.setImageBitmap(bitmap);
+                questionImage.setVisibility(View.VISIBLE);
+            } catch (IOException e) {
+                e.printStackTrace();
+                questionImage.setVisibility(View.GONE);
+            }
+        } else {
+            questionImage.setVisibility(View.GONE);
+        }
+
         optionA.setText(q.getOptionA());
         optionB.setText(q.getOptionB());
         optionC.setText(q.getOptionC());
@@ -168,7 +172,6 @@ public class QuizActivity extends AppCompatActivity {
         else if (savedAnswer == 3) optionsGroup.check(optionC.getId());
         else if (savedAnswer == 4) optionsGroup.check(optionD.getId());
 
-        // Đặt lại listener
         optionsGroup.setOnCheckedChangeListener((group, checkedId) -> {
             int answer = -1;
             if (checkedId == optionA.getId()) answer = 1;
@@ -183,7 +186,6 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        // 🔥 Thêm đoạn này
         if (currentIndex == questionList.size() - 1) {
             nextButton.setText("Nộp bài");
         } else {
@@ -191,10 +193,10 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-
     private void startTimer() {
-        timer = new CountDownTimer(20 * 60 * 1000, 1000) {
+        timer = new CountDownTimer(timeRemaining, 1000) {
             public void onTick(long millisUntilFinished) {
+                timeRemaining = millisUntilFinished;
                 long min = millisUntilFinished / 60000;
                 long sec = (millisUntilFinished % 60000) / 1000;
                 timerText.setText(String.format(Locale.getDefault(), "%02d:%02d", min, sec));
@@ -207,7 +209,6 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showResult() {
-        // Tính điểm lại chính xác
         score = 0;
         for (int i = 0; i < questionList.size(); i++) {
             if (selectedAnswers.get(i) == questionList.get(i).getCorrectAnswer()) {
@@ -221,5 +222,29 @@ public class QuizActivity extends AppCompatActivity {
         intent.putExtra("selectedAnswers", new ArrayList<>(selectedAnswers));
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (timeRemaining > 0) {
+            startTimer();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+        }
     }
 }
