@@ -10,12 +10,17 @@ public class Question implements Serializable {
     private String optionC;
     private String optionD;
     private int correctAnswer;
-    private String image;
+    private String category;
+    private String difficulty;
+    private String image; // Tên file hình ảnh trong assets
+    private String explanation;  // Thêm trường explanation
 
     public Question() {
     }
 
-    public Question(int id, String question, String optionA, String optionB, String optionC, String optionD, int correctAnswer, String image) {
+    public Question(int id, String question, String optionA, String optionB,
+                   String optionC, String optionD, int correctAnswer,
+                   String category, String difficulty, String image, String explanation) {
         this.id = id;
         this.question = question;
         this.optionA = optionA;
@@ -23,10 +28,11 @@ public class Question implements Serializable {
         this.optionC = optionC;
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
+        this.category = category;
+        this.difficulty = difficulty;
         this.image = image;
+        this.explanation = explanation;
     }
-
-    // Getters và setters
 
     public int getId() {
         return id;
@@ -84,11 +90,35 @@ public class Question implements Serializable {
         this.correctAnswer = correctAnswer;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
     public String getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getExplanation() {
+        return explanation;
+    }
+
+    public void setExplanation(String explanation) {
+        this.explanation = explanation;
     }
 }

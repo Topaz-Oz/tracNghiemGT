@@ -16,7 +16,7 @@ public class QuestionDataLoader {
     private final SQLiteDatabase db;
 
     public QuestionDataLoader(Context context) {
-        File dbPath = context.getDatabasePath("questions.db"); // đổi tên cho đúng file
+        File dbPath = context.getDatabasePath("questions.sql"); // đổi tên cho đúng file
         db = SQLiteDatabase.openDatabase(dbPath.getPath(), null, SQLiteDatabase.OPEN_READWRITE);
     }
 

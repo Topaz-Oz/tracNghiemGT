@@ -17,6 +17,7 @@
         <activity android:name=".ui.WrongDetailActivity" />
         <activity android:name=".ui.QuizActivity" />
         <activity android:name=".ui.ResultActivity" />
+        <activity android:name=".ui.ReviewActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

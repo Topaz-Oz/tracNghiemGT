@@ -10,19 +10,19 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/timerText"
+            android:id="@+id/questionNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textSize="20sp"
+            android:text="Câu 1/25"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
         <TextView
             android:id="@+id/questionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_marginBottom="16dp"/>
 
         <ImageView
@@ -32,56 +32,89 @@
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
             android:layout_marginBottom="16dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:background="#F5F5F5"/>
 
         <RadioGroup
             android:id="@+id/optionsGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="16dp">
 
             <RadioButton
                 android:id="@+id/optionA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textSize="16sp"/>
+                android:enabled="false"/>
 
             <RadioButton
                 android:id="@+id/optionB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textSize="16sp"/>
+                android:enabled="false"/>
 
             <RadioButton
                 android:id="@+id/optionC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textSize="16sp"/>
+                android:enabled="false"/>
 
             <RadioButton
                 android:id="@+id/optionD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"/>
+                android:layout_marginBottom="8dp"
+                android:enabled="false"/>
 
         </RadioGroup>
 
-        <Button
-            android:id="@+id/nextButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Câu tiếp theo"
-            android:textSize="16sp"/>
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#F5F5F5"
+            android:layout_marginBottom="16dp">
 
-        <ProgressBar
-            android:id="@+id/loadingProgressBar"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/answerStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/explanationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/prevButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRƯỚC"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAU"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
