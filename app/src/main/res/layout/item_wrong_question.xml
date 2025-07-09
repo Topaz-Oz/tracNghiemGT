@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Câu hỏi"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:text="Các đáp án"
             android:textColor="#333333"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvAnswer"
@@ -37,7 +37,7 @@
             android:layout_marginTop="8dp"
             android:text="Đáp án đúng"
             android:textColor="#1E88E5"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_marginTop="8dp"
             android:text="Giải thích"
             android:textColor="#555555"
-            android:textSize="13sp" />
+            android:textSize="17sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

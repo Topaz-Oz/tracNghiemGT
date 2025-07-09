@@ -18,26 +18,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="213dp"
+        android:layout_height="217dp"
         android:layout_marginTop="89dp"
         android:contentDescription="Logo"
         android:src="@drawable/logo_thithu"
         app:layout_constraintBottom_toTopOf="@id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:backgroundTint="#2196F3"
+        android:layout_width="213dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/button_gradient"
         android:elevation="4dp"
         android:padding="14dp"
         android:text="BẮT ĐẦU THI"
@@ -45,7 +46,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logoImage" />
 
@@ -57,7 +58,7 @@
         android:gravity="center"
         android:text="Bao gồm 25 câu hỏi\nThời gian làm bài: 20 phút"
         android:textColor="#666666"
-        android:textSize="16sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

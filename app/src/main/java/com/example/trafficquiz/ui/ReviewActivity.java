@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trafficquiz.R;
@@ -22,25 +23,26 @@ import java.util.List;
 
 public class ReviewActivity extends AppCompatActivity {
 
-    private TextView questionNumber;
-    private TextView questionText;
+    private TextView questionNumber, questionText, answerStatus, explanationText;
     private ImageView questionImage;
     private RadioGroup optionsGroup;
     private RadioButton optionA, optionB, optionC, optionD;
-    private TextView answerStatus;
-    private TextView explanationText;
     private Button prevButton, nextButton;
 
     private List<Question> questions;
     private ArrayList<Integer> userAnswers;
     private int currentIndex = 0;
 
+    // Đặt key constant riêng, không phụ thuộc ResultActivity
+    public static final String EXTRA_QUESTIONS = "EXTRA_QUESTIONS";
+    public static final String EXTRA_USER_ANSWERS = "USER_ANSWERS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        // Ánh xạ views
+        // Ánh xạ view
         questionNumber = findViewById(R.id.questionNumber);
         questionText = findViewById(R.id.questionText);
         questionImage = findViewById(R.id.questionImage);
@@ -54,14 +56,19 @@ public class ReviewActivity extends AppCompatActivity {
         prevButton = findViewById(R.id.prevButton);
         nextButton = findViewById(R.id.nextButton);
 
-        // Lấy dữ liệu từ intent
-        questions = (ArrayList<Question>) getIntent().getSerializableExtra(ResultActivity.EXTRA_QUESTIONS);
-        userAnswers = getIntent().getIntegerArrayListExtra("USER_ANSWERS");
+        // Lấy dữ liệu từ Intent
+        questions = (ArrayList<Question>) getIntent().getSerializableExtra(EXTRA_QUESTIONS);
+        userAnswers = getIntent().getIntegerArrayListExtra(EXTRA_USER_ANSWERS);
 
-        // Hiển thị câu hỏi đầu tiên
+        if (questions == null || userAnswers == null) {
+            // Nếu dữ liệu bị null, kết thúc activity
+            finish();
+            return;
+        }
+
+        // Hiển thị câu đầu
         showQuestion();
 
-        // Xử lý sự kiện click nút Trước/Sau
         prevButton.setOnClickListener(v -> {
             if (currentIndex > 0) {
                 currentIndex--;
@@ -81,13 +88,13 @@ public class ReviewActivity extends AppCompatActivity {
         Question q = questions.get(currentIndex);
         int userAnswer = userAnswers.get(currentIndex);
 
-        // Hiển thị số thứ tự câu hỏi
+        // Số thứ tự
         questionNumber.setText(String.format("Câu %d/%d", currentIndex + 1, questions.size()));
 
-        // Hiển thị nội dung câu hỏi
+        // Nội dung
         questionText.setText(q.getQuestion());
 
-        // Hiển thị hình ảnh nếu có
+        // Ảnh
         if (q.getImage() != null && !q.getImage().isEmpty()) {
             try {
                 InputStream is = getAssets().open("images/" + q.getImage());
@@ -102,49 +109,35 @@ public class ReviewActivity extends AppCompatActivity {
             questionImage.setVisibility(View.GONE);
         }
 
-        // Hiển thị các đáp án
+        // Đáp án
         optionA.setText(q.getOptionA());
         optionB.setText(q.getOptionB());
         optionC.setText(q.getOptionC());
         optionD.setText(q.getOptionD());
 
-        // Reset màu sắc của tất cả các RadioButton
+        // Reset màu và trạng thái
         optionA.setTextColor(Color.BLACK);
         optionB.setTextColor(Color.BLACK);
         optionC.setTextColor(Color.BLACK);
         optionD.setTextColor(Color.BLACK);
+        optionsGroup.clearCheck();
 
-        // Đánh dấu đáp án người dùng đã chọn và đáp án đúng
-        RadioButton selectedButton = null;
-        RadioButton correctButton = null;
+        RadioButton correctButton = getOptionByNumber(q.getCorrectAnswer());
+        RadioButton selectedButton = getOptionByNumber(userAnswer);
 
-        switch (userAnswer) {
-            case 1: selectedButton = optionA; break;
-            case 2: selectedButton = optionB; break;
-            case 3: selectedButton = optionC; break;
-            case 4: selectedButton = optionD; break;
-        }
-
-        switch (q.getCorrectAnswer()) {
-            case 1: correctButton = optionA; break;
-            case 2: correctButton = optionB; break;
-            case 3: correctButton = optionC; break;
-            case 4: correctButton = optionD; break;
-        }
-
-        // Hiển thị đáp án đúng bằng màu xanh
+        // Hiển thị đáp án đúng
         if (correctButton != null) {
             correctButton.setTextColor(Color.GREEN);
             correctButton.setChecked(true);
         }
 
-        // Nếu người dùng chọn sai, hiển thị màu đỏ
+        // Nếu sai, tô đỏ đáp án người dùng chọn
         if (selectedButton != null && selectedButton != correctButton) {
             selectedButton.setTextColor(Color.RED);
             selectedButton.setChecked(true);
         }
 
-        // Hiển thị trạng thái đúng/sai
+        // Trạng thái đúng/sai
         if (userAnswer == q.getCorrectAnswer()) {
             answerStatus.setText("✓ Chính xác!");
             answerStatus.setTextColor(Color.GREEN);
@@ -153,7 +146,7 @@ public class ReviewActivity extends AppCompatActivity {
             answerStatus.setTextColor(Color.RED);
         }
 
-        // Hiển thị giải thích
+        // Giải thích
         String explanation = "Đáp án đúng: " + getAnswerText(q.getCorrectAnswer());
         if (userAnswer > 0) {
             explanation += "\nBạn đã chọn: " + getAnswerText(userAnswer);
@@ -162,18 +155,23 @@ public class ReviewActivity extends AppCompatActivity {
         }
         explanationText.setText(explanation);
 
-        // Enable/disable nút Trước/Sau
+        // Enable/disable nút
         prevButton.setEnabled(currentIndex > 0);
         nextButton.setEnabled(currentIndex < questions.size() - 1);
     }
 
-    private String getAnswerText(int answerNr) {
-        switch (answerNr) {
-            case 1: return optionA.getText().toString();
-            case 2: return optionB.getText().toString();
-            case 3: return optionC.getText().toString();
-            case 4: return optionD.getText().toString();
-            default: return "";
+    private RadioButton getOptionByNumber(int number) {
+        switch (number) {
+            case 1: return optionA;
+            case 2: return optionB;
+            case 3: return optionC;
+            case 4: return optionD;
+            default: return null;
         }
+    }
+
+    private String getAnswerText(int answerNr) {
+        RadioButton option = getOptionByNumber(answerNr);
+        return option != null ? option.getText().toString() : "";
     }
 }

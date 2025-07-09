@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trafficquiz.R;
+import com.example.trafficquiz.database.QuizDbHelper;
 import com.example.trafficquiz.model.Question;
 import com.example.trafficquiz.repository.QuestionRepository;
 
